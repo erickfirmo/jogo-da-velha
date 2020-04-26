@@ -101,22 +101,44 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
     <script>
+
+        var casa_1 = document.getElementById('casa-1').innerHTML = '';
+        var casa_2 = document.getElementById('casa-2').innerHTML = '';
+        var casa_3 = document.getElementById('casa-3').innerHTML = '';
+        var casa_4 = document.getElementById('casa-4').innerHTML = '';
+        var casa_5 = document.getElementById('casa-5').innerHTML = '';
+        var casa_6 = document.getElementById('casa-6').innerHTML = '';
+        var casa_7 = document.getElementById('casa-7').innerHTML = '';
+        var casa_8 = document.getElementById('casa-8').innerHTML = '';
+        var casa_9 = document.getElementById('casa-9').innerHTML = '';
+            
         function limpar_casas()
         {
-            document.getElementById('casa-1').innerHTML = '';
-            document.getElementById('casa-2').innerHTML = '';
-            document.getElementById('casa-3').innerHTML = '';
-            document.getElementById('casa-4').innerHTML = '';
-            document.getElementById('casa-5').innerHTML = '';
-            document.getElementById('casa-6').innerHTML = '';
-            document.getElementById('casa-7').innerHTML = '';
-            document.getElementById('casa-8').innerHTML = '';
-            document.getElementById('casa-9').innerHTML = '';
-
+            casa_1.innerHTML = '';
+            casa_2.innerHTML = '';
+            casa_3.innerHTML = '';
+            casa_4.innerHTML = '';
+            casa_5.innerHTML = '';
+            casa_6.innerHTML = '';
+            casa_7.innerHTML = '';
+            casa_8.innerHTML = '';
+            casa_9.innerHTML = '';
         }
 
         limpar_casas();
 
+        function verifica_casas(a, b, c) {
+            if(valida_casa(a) && valida_casa(b) && valida_casa(c)) {
+
+            }
+
+        }
+
+        function valida_casa(casa)
+        {
+            //return boolean
+            return (casa == 'O' || casa == 'X');
+        }
 
         function status_da_partida() {
 
