@@ -129,15 +129,24 @@
 
         function verifica_casas(a, b, c) {
             if(valida_casa(a) && valida_casa(b) && valida_casa(c)) {
+ 
+                if(a == b && a == c) {
+                    return 'preenchida';
+                } else if(((a == b && a != c) || (b == c && b != a) || (c == a && c != b)) && (a == '' || b == '' || c == '') && ((a == 'X' || a == 'O') && (b == 'X' || b == 'O') && (c == 'X' || c == 'O'))) {
+
+                }
+
+
 
             }
 
         }
 
+
         function valida_casa(casa)
         {
             //return boolean
-            return (casa == 'O' || casa == 'X');
+            return casa == 'O' || casa == 'X' || casa == '';
         }
 
         function status_da_partida() {
