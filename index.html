@@ -10,40 +10,88 @@
 
     <style>
         
+
+        h1 {
+            text-align: center;
+            margin: 50px auto;
+        }
+        
         .box, .linha {
             width: 300px;
+            margin: auto;
 
         }
 
         .casa {
-            margin: 0 0 4px 0;
-            padding: 38px;
+            margin: 0 0 0px 0;
+            padding: 15px;
             height: 100px;
-            width: 94px;
+            width: 96px;
             text-align: center;
             display: inline-block;
+            font-size: 44px;
+            left: 2px;
+        }
+
+        .linha-1, .linha-2 {
+            border-bottom: 3px solid #000;
+        }
+
+        .casa-1, .casa-4, .casa-7, .casa-2, .casa-5, .casa-8 {
+            border-right: 3px solid #000;
+        }
+
+        .placar {
+            margin-bottom: 50px;
+        }
+
+        .player-1, .player-2 {
+            font-size: 30px;
+            vertical-align: middle;
+            margin-left: 10px;
         }
         
     </style>
   </head>
   <body>
+
+
+
+
+    
     <h1>Jogo da Velha</h1>
 
+        <div class="container-fluid placar pt-3 pb-2">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="text-center">
+                        PLAYER 1: <span class="player-1">0</span>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p class="text-center">
+                        PLAYER 2: <span class="player-2">0</span>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
         <div class="box">
-            <div class="linha">
+            <div class="linha linha-1">
                 <div class="casa casa-1">X</div>
-                <div class="casa casa-1">O</div>
-                <div class="casa casa-1">O</div>
+                <div class="casa casa-2">O</div>
+                <div class="casa casa-3">O</div>
+            </div>
+            <div class="linha linha-2">
+                <div class="casa casa-4">X</div>
+                <div class="casa casa-5">O</div>
+                <div class="casa casa-6">X</div>
             </div>
             <div class="linha">
-                <div class="casa">X</div>
-                <div class="casa">O</div>
-                <div class="casa">X</div>
-            </div>
-            <div class="linha">
-                <div class="casa">X</div>
-                <div class="casa">X</div>
-                <div class="casa">O</div>
+                <div class="casa casa-7">X</div>
+                <div class="casa casa-8">X</div>
+                <div class="casa casa-9">O</div>
             </div>
         </div>
 
