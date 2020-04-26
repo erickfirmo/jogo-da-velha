@@ -138,8 +138,8 @@
                     } else {
                         return 'em risco'; 
                     }
-                } else if(a != b && a != c && c == '' && (a == 'X' && b == 'O') || (b == 'X' && a == 'O')) {
-                    //duas casas diferentes preenchidas e uma em branco
+                } else if(a != b && c != '' && (a == 'X' && b == 'O') || (b == 'X' && a == 'O')) {
+                    //duas casas iguais, todas preenchidas
                     return 'anulada';
                 } else if(a == b && a != c && c != '' && a == '') {
                     //duas casas em branco e uma preenchida
@@ -149,9 +149,7 @@
                         return 'chance de perder'; 
                     }
                 }
-
             }
-
         }
 
         function verifica_casa_do_player(casa, player)
