@@ -19,6 +19,7 @@
         .box, .linha {
             width: 300px;
             margin: auto;
+            height: 100px;
 
         }
 
@@ -58,7 +59,7 @@
 
 
 
-    
+
     <h1>Jogo da Velha</h1>
 
         <div class="container-fluid placar pt-3 pb-2">
@@ -79,24 +80,52 @@
 
         <div class="box">
             <div class="linha linha-1">
-                <div class="casa casa-1">X</div>
-                <div class="casa casa-2">O</div>
-                <div class="casa casa-3">O</div>
+                <div id="casa-1" class="casa casa-1">X</div>
+                <div id="casa-2" class="casa casa-2">O</div>
+                <div id="casa-3" class="casa casa-3">O</div>
             </div>
             <div class="linha linha-2">
-                <div class="casa casa-4">X</div>
-                <div class="casa casa-5">O</div>
-                <div class="casa casa-6">X</div>
+                <div id="casa-4" class="casa casa-4">X</div>
+                <div id="casa-5" class="casa casa-5">O</div>
+                <div id="casa-6" class="casa casa-6">X</div>
             </div>
             <div class="linha">
-                <div class="casa casa-7">X</div>
-                <div class="casa casa-8">X</div>
-                <div class="casa casa-9">O</div>
+                <div id="casa-7" class="casa casa-7">X</div>
+                <div id="casa-8" class="casa casa-8">X</div>
+                <div id="casa-9" class="casa casa-9">O</div>
             </div>
         </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+  
+    <script>
+        function limpar_casas()
+        {
+            document.getElementById('casa-1').innerHTML = '';
+            document.getElementById('casa-2').innerHTML = '';
+            document.getElementById('casa-3').innerHTML = '';
+            document.getElementById('casa-4').innerHTML = '';
+            document.getElementById('casa-5').innerHTML = '';
+            document.getElementById('casa-6').innerHTML = '';
+            document.getElementById('casa-7').innerHTML = '';
+            document.getElementById('casa-8').innerHTML = '';
+            document.getElementById('casa-9').innerHTML = '';
+
+        }
+
+        limpar_casas();
+
+
+        function status_da_partida() {
+
+        }
+
+
+
+    </script>
+
+
+</body>
 </html>
