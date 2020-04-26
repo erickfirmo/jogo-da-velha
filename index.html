@@ -127,7 +127,7 @@
             casa_9.innerHTML = '';
         }
 
-        limpar_casas();
+
 
         function verifica_casas(a, b, c, player) {
 
@@ -170,12 +170,14 @@
         }
 
         function start() {
-            limpar_placar();
+            zerar_placar();
         }
 
-        function limpar_placar() {
+        function zerar_placar() {
             placar.player_1 = 0;
             placar.player_2 = 0;
+            document.getElementsByClassName('player-1')[0].innerHTML = 0;
+            document.getElementsByClassName('player-2')[0].innerHTML = 0;
         }
 
         function adicionar_ponto(player) {
@@ -188,6 +190,8 @@
             document.getElementsByClassName('player-2')[0].innerHTML = placar.player_2;
         }
 
+
+        
     </script>
 </body>
 </html>
