@@ -111,6 +111,8 @@
         var casa_7 = document.getElementById('casa-7').innerHTML = '';
         var casa_8 = document.getElementById('casa-8').innerHTML = '';
         var casa_9 = document.getElementById('casa-9').innerHTML = '';
+
+        var placar = { "player_1": 0,  "player_2": 0 };
             
         function limpar_casas()
         {
@@ -157,7 +159,6 @@
             return (player.letra == casa);
         }
 
-
         function valida_casa(casa)
         {
             //return boolean
@@ -165,13 +166,28 @@
         }
 
         function status_da_partida() {
-
+            verifica_casas('')
         }
 
+        function start() {
+            limpar_placar();
+        }
 
+        function limpar_placar() {
+            placar.player_1 = 0;
+            placar.player_2 = 0;
+        }
+
+        function adicionar_ponto(player) {
+            placar.player_1 == placar.player_1 + 1;
+        }
+
+        function renderizar_placar()
+        {
+            document.getElementsByClassName('player-1')[0].innerHTML = placar.player_1;
+            document.getElementsByClassName('player-2')[0].innerHTML = placar.player_2;
+        }
 
     </script>
-
-
 </body>
 </html>
