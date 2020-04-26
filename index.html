@@ -127,16 +127,19 @@
 
         limpar_casas();
 
-        function verifica_casas(a, b, c) {
+        function verifica_casas(a, b, c, player) {
             if(valida_casa(a) && valida_casa(b) && valida_casa(c)) {
  
-                if(a == b && a == c) {
-                    return 'preenchida';
-                } else if(((a == b && a != c) || (b == c && b != a) || (c == a && c != b)) && (a == '' || b == '' || c == '') && ((a == 'X' || a == 'O') && (b == 'X' || b == 'O') && (c == 'X' || c == 'O'))) {
-
+                if(a == b && a != c && c == '' && (a == 'X' || a == 'O')) {
+                    //duas casas iguais preenchidas e uma em branco
+                    return 'em risco';
+                } else if(a != b && a != c && c == '' && (a == 'X' && b == 'O') || (b == 'X' && a == 'O')) {
+                    //duas casas diferentes preenchidas e uma em branco
+                    return 'anulada';
+                } else if(a == b && a != c && c != '' && a == '') {
+                    //duas casas em branco e uma preenchida
+                    return 'possibilidade';
                 }
-
-
 
             }
 
