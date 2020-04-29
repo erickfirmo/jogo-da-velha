@@ -66,12 +66,12 @@
             <div class="row">
                 <div class="col-md-6">
                     <p class="text-center">
-                        PLAYER 1: <span class="player-1">0</span>
+                        PLAYER 1: <span class="player-1"></span>
                     </p>
                 </div>
                 <div class="col-md-6">
                     <p class="text-center">
-                        PLAYER 2: <span class="player-2">0</span>
+                        PLAYER 2: <span class="player-2"></span>
                     </p>
 
                 </div>
@@ -113,6 +113,10 @@
         var casa_9 = document.getElementById('casa-9').innerHTML = '';
 
         var placar = { "player_1": 0,  "player_2": 0 };
+
+        var current_player = '';
+
+        var partidas = 0;
             
         function limpar_casas()
         {
@@ -127,7 +131,8 @@
             casa_9.innerHTML = '';
         }
 
-
+        // player1 X
+        // player2 O
 
         function verifica_casas(a, b, c, player) {
 
@@ -136,18 +141,23 @@
                 if(a == b && a != c && c == '' && (a == 'X' || a == 'O')) {
                     //duas casas iguais preenchidas e uma em branco
                     if(verifica_casa_do_player(casa, player)) {
+                        // XX_
                         return 'ganhar';
                     } else {
+                        // OO_
                         return 'em risco'; 
                     }
                 } else if(a != b && c != '' && (a == 'X' && b == 'O') || (b == 'X' && a == 'O')) {
                     //duas casas iguais, todas preenchidas
+                    // XXO ou OOX 
                     return 'anulada';
                 } else if(a == b && a != c && c != '' && a == '') {
                     //duas casas em branco e uma preenchida
                     if(verifica_casa_do_player(casa, player)) {
+                        // X__
                         return 'chance de ganhar';
                     } else {
+                        // O__
                         return 'chance de perder'; 
                     }
                 }
@@ -156,17 +166,22 @@
 
         function verifica_casa_do_player(casa, player)
         {
+            // boolean
             return (player.letra == casa);
         }
 
         function valida_casa(casa)
         {
-            //return boolean
+            // boolean
             return casa == 'O' || casa == 'X' || casa == '';
         }
 
         function status_da_partida() {
-            verifica_casas('')
+            verifica_casas(casa_1.innerHTML, casa_2.innerHTML, casa_3.innerHTML);
+
+
+
+
         }
 
         function start() {
@@ -184,15 +199,20 @@
             placar.player_1 == placar.player_1 + 1;
         }
 
-        function renderizar_placar()
+        function atualizar_placar()
         {
             document.getElementsByClassName('player-1')[0].innerHTML = placar.player_1;
             document.getElementsByClassName('player-2')[0].innerHTML = placar.player_2;
         }
+
+        function jogada()
+        {
+
+        }
         
         limpar_casas();
         zerar_placar();
-        
+        //start();
     </script>
 </body>
 </html>
