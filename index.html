@@ -117,6 +117,13 @@
         var current_player = '';
 
         var partidas = 0;
+
+        var partida = new Object();
+
+        partida.status = false;
+        partida.player_da_jogada = false;
+        partida.vencedor = false;
+        
             
         function limpar_casas()
         {
@@ -186,6 +193,15 @@
 
         function start() {
             zerar_placar();
+
+            verifica_casa_do_player(casa_1, casa_2, casa_3, player_1);
+            verifica_casa_do_player(casa_4, casa_5, casa_6, player_1);
+            verifica_casa_do_player(casa_7, casa_8, casa_9, player_1);
+            verifica_casa_do_player(casa_1, casa_3, casa_7, player_1);
+            verifica_casa_do_player(casa_2, casa_4, casa_5, player_1);
+            verifica_casa_do_player(casa_3, casa_6, casa_9, player_1);
+            verifica_casa_do_player(casa_1, casa_5, casa_9, player_1);
+            verifica_casa_do_player(casa_3, casa_5, casa_7, player_1);
         }
 
         function zerar_placar() {
@@ -205,10 +221,6 @@
             document.getElementsByClassName('player-2')[0].innerHTML = placar.player_2;
         }
 
-        function jogada()
-        {
-
-        }
         
         limpar_casas();
         zerar_placar();
